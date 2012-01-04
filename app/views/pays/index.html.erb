@@ -1,0 +1,36 @@
+<h1>Listing pays</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Goods type</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Image url</th>
+    <th>Receipt url</th>
+    <th>Memo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pays.each do |pay| %>
+  <tr>
+    <td><%= pay.date %></td>
+    <td><%= pay.goods_type %></td>
+    <td><%= pay.name %></td>
+    <td><%= pay.price %></td>
+    <td><%= pay.image_url %></td>
+    <td><%= pay.receipt_url %></td>
+    <td><%= pay.memo %></td>
+    <td><%= link_to 'Show', pay %></td>
+    <td><%= link_to 'Edit', edit_pay_path(pay) %></td>
+    <td><%= link_to 'Destroy', pay, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pay', new_pay_path %>
+<%= link_to 'back to top', manage_index_path %>

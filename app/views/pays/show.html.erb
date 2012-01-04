@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @pay.date %>
+</p>
+
+<p>
+  <b>Goods type:</b>
+  <%= @pay.goods_type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @pay.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @pay.price %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @pay.image_url %>
+</p>
+
+<p>
+  <b>Receipt url:</b>
+  <%= @pay.receipt_url %>
+</p>
+
+<p>
+  <b>Memo:</b>
+  <%= @pay.memo %>
+</p>
+
+
+<%= link_to 'Edit', edit_pay_path(@pay) %> |
+<%= link_to 'Back', pays_path %>
