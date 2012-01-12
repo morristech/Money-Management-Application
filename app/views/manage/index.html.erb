@@ -1,13 +1,16 @@
+<h3>Hello, <%= @user.name  %> !</h3>
 <h3>Money Management page</h3>
 
 <p>
-        <%= link_to "now", check_state_path %>
+  <%= link_to "now", check_state_path %>
 </p>
 
 <p>
-        <%= link_to "pay", pays_path %>
+  <%= link_to "pay", pays_path %>
 </p>
 
 <p>
-        <%= link_to "income", incomes_path %>
+  <%= link_to "income", incomes_path %>
 </p>
+
+<%= link_to "Log out", logout_path, method: :delete %>

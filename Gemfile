@@ -34,3 +34,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
+# added for user confirmation by D.sukita 2012/1/6
+gem 'bcrypt-ruby'
+
