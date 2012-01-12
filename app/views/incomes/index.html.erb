@@ -13,16 +13,18 @@
   </tr>
 
 <% @incomes.each do |income| %>
-  <tr>
-    <td><%= income.date %></td>
-    <td><%= income.goods_type %></td>
-    <td><%= income.name %></td>
-    <td><%= income.price %></td>
-    <td><%= income.memo %></td>
-    <td><%= link_to 'Show', income %></td>
-    <td><%= link_to 'Edit', edit_income_path(income) %></td>
-    <td><%= link_to 'Destroy', income, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <% if @user.name == income.uname %>
+    <tr>
+      <td><%= income.date %></td>
+      <td><%= income.goods_type %></td>
+      <td><%= income.name %></td>
+      <td><%= income.price %></td>
+      <td><%= income.memo %></td>
+      <td><%= link_to 'Show', income %></td>
+      <td><%= link_to 'Edit', edit_income_path(income) %></td>
+      <td><%= link_to 'Destroy', income, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
 <% end %>
 </table>
 

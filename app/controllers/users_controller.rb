@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 #--- allow to access "Account Create Page -> /users/new" ---#
-  skip_before_filter :authorize, only: [:new]
+  skip_before_filter :authorize, only: [:new, :create]
 
   # GET /users
   # GET /users.json

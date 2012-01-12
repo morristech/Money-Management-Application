@@ -3,7 +3,7 @@ class IncomesController < ApplicationController
   # GET /incomes.json
   def index
     @incomes = Income.all
-
+    @user = User.find(session[:user_id])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @incomes }
@@ -25,6 +25,7 @@ class IncomesController < ApplicationController
   # GET /incomes/new.json
   def new
     @income = Income.new
+    @user = User.find(session[:user_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class IncomesController < ApplicationController
   # GET /incomes/1/edit
   def edit
     @income = Income.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   # POST /incomes

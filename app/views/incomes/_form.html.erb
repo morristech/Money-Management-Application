@@ -12,26 +12,37 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :uname, 'User Name: ' %><%= @user.name %><br>
+    <%= f.hidden_field :uname, :value => @user.name %>
+  </div>
+
+  <div class="field">
     <%= f.label :date %><br />
     <%= f.text_field :date %>
   </div>
+
   <div class="field">
     <%= f.label :goods_type %><br />
     <%= f.text_field :goods_type %>
   </div>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
+
   <div class="field">
     <%= f.label :memo %><br />
     <%= f.text_area :memo %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

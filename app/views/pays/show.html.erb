@@ -21,13 +21,13 @@
 </p>
 
 <p>
-  <b>Image url:</b>
-  <%= @pay.image_url %>
+  <b>Image</b><br>
+  <%= image_tag("../image/#{@pay.image_url}", :size=>"100x100") %>
 </p>
 
 <p>
-  <b>Receipt url:</b>
-  <%= @pay.receipt_url %>
+  <b>Receipt image</b><br>
+  <%= image_tag("../receipt/#{@pay.receipt_url}", :size=>"100x100") %>
 </p>
 
 <p>

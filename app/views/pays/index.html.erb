@@ -15,6 +15,7 @@
   </tr>
 
 <% @pays.each do |pay| %>
+  <% if @nowuser.name == pay.uname %>
   <tr>
     <td><%= pay.date %></td>
     <td><%= pay.goods_type %></td>
@@ -27,6 +28,7 @@
     <td><%= link_to 'Edit', edit_pay_path(pay) %></td>
     <td><%= link_to 'Destroy', pay, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+  <% end %>
 <% end %>
 </table>
 

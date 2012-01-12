@@ -1,4 +1,4 @@
-<%= form_for(@pay) do |f| %>
+<%= form_for(@pay, :html => {:multipart => true}) do |f| %>
   <% if @pay.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pay.errors.count, "error") %> prohibited this pay from being saved:</h2>
@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= f.label :uname, 'User Name: ' %><%= @user.name %><br>
+    <%= f.hidden_field :uname, :value => @user.name %>
+  </div>
 
   <div class="field">
     <%= f.label :date %><br />
@@ -39,6 +44,15 @@
     <%= f.label :memo %><br />
     <%= f.text_area :memo %>
   </div>
+
+  <div class="field">
+    <input name="image" type="file" />
+  </div>
+
+  <div class="field">
+    <input name="receipt" type="file" />
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
