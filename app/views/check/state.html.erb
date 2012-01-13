@@ -1,10 +1,70 @@
-<h3>State of your monay</h3>
+<h2>State of your monay</h2>
+
+
+<!-- #--- Pay table of this month ---# -->
+<h3>Pay of this Month</h3>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Memo</th>
+  </tr>
+
+  <% @nowpay.each do |pay| %>
+    <% payYMD = pay.date %>
+    <% payYMDString = payYMD.to_s %>
+    <% payYMString = payYMDString.slice(0,8) %>
+    
+<!-- #--- year and month, Pay.uname and now login username are equal, show table ---# -->
+    <% if @timetime == payYMString and @user.name == pay.uname %>
+      <tr>
+        <td><%= pay.date %></td>
+        <td><%= pay.name %></td>
+        <td><%= pay.price %></td>
+        <td><%= pay.memo %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+
+
+<br>
+<!-- #--- Income table of current Month ---# -->
+<h3>Income of this Month</h3>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Memo</th>
+  </tr>
+
+  <% @nowincome.each do |income| %>
+    <% incomeYMD = income.date %>
+    <% incomeYMDString = incomeYMD.to_s %>
+    <% incomeYMString = incomeYMDString.slice(0,8) %>
+
+    <% if @timetime == incomeYMString and @user.name == income.uname %>
+      <tr>
+        <td><%= income.date %></td>
+        <td><%= income.name %></td>
+        <td><%= income.price %></td>
+        <td><%= income.memo %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<br>
+<br>
 <p>
-所持金:<%= @income_sum %>
+  All income:<%= @income_sum %>
 </p>
 
 <p>
-合計:<%= @pay_sum %>
+  All pay:<%= @pay_sum %>
 </p>
 
 <%= link_to "back to top", manage_index_path %>

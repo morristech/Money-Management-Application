@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120112045721) do
+ActiveRecord::Schema.define(:version => 20120113031359) do
 
   create_table "incomes", :force => true do |t|
-    t.string   "date"
+    t.date     "date",       :limit => 255, :null => false
     t.string   "goods_type"
     t.string   "name"
     t.decimal  "price"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20120112045721) do
   end
 
   create_table "pays", :force => true do |t|
-    t.string   "date"
+    t.date     "date",        :limit => 255, :null => false
     t.string   "goods_type"
     t.string   "name"
     t.decimal  "price"

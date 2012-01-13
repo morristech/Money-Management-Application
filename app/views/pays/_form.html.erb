@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.text_field :date %>
+    <%= f.date_select :date, :user_month_numbers => true %>
   </div>
   <div class="field">
     <%= f.label :goods_type %><br />
@@ -46,10 +46,12 @@
   </div>
 
   <div class="field">
+    Image File<br>
     <input name="image" type="file" />
   </div>
 
   <div class="field">
+    Receipt Image<br>
     <input name="receipt" type="file" />
   </div>
 

@@ -1,6 +1,14 @@
 class CheckController < ApplicationController
   def state
     @user = User.find(session[:user_id])
+    @nowpay = Pay.all
+    @nowincome = Income.all
+
+    nowtime = Time.now                    #--- get current time ---#
+    nowtime_string = nowtime.to_s         #--- convert valiable to string type ---#
+    @timetime = nowtime_string.slice(0,8) #--- cut year and month information (e.g. @timetime -> '2011-12-') ---#
+
+    
 
     #--- 支払い額の積算 ---
     @pay_money = Pay.all
